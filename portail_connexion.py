@@ -1,11 +1,13 @@
 def verifier_mot_de_passe():
-    entree_mot_de_passe = entry_mot_de_passe.get()
-    if entree_mot_de_passe == "qwerty":
-        label_resultat.config(text="Connexion réussie")
-        label_resultat.pack()
+    entree_mot_de_passe = entry_mot_de_passe.get()   
+    if entree_mot_de_passe == "azerty":
+        label_resultat.config(text="Connexion réussie", fg="green")
     else:
-        label_resultat.config(text="Mot de passe incorrect")
-        label_resultat.pack()
+        label_resultat.config(text=f"Mot de passe incorrect", fg="red")
+        entry_mot_de_passe.delete(0, tk.END)
+        entry_mot_de_passe.focus_set()
+
+             
 import tkinter as tk 
 fenetre = tk.Tk()
 fenetre.title("Portail de connexion")
@@ -20,6 +22,14 @@ se_connecter = tk.Button(fenetre, text="Se connecter", command=verifier_mot_de_p
 se_connecter.pack()
 fenetre.mainloop()
 
+
+#essai = 3
+#while essai < 0:
+#    print("Mot de passe incorrect /nIl vous reste", essai, "essai(s)")
+#if essai == 0:
+#    print("Vous avez dépassé le nombre d'essais autorisés.\nVeuillez réessayer dans 15 secondes.")
+
+  
 
 
 
